@@ -1,0 +1,20 @@
+version: "3.9"
+services:
+  app_test:
+    build: .
+    container_name: app_test
+    environment:
+      - NODE_ENV=test
+      - PORT=3001
+    ports:
+      - "3001:3001"
+    command: sh -c "npm ci --legacy-peer-deps && npm test && node src/index.js"
+  app_prod:
+    build: .
+    container_name: app_prod
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+    ports:
+      - "3000:3000"
+    command: node src/index.js
