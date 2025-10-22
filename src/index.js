@@ -20,7 +20,7 @@ app.use((req, res, next) => {
 
 // Routes
 app.get('/', (req, res) => {
-  res.json({ message: 'Hello from There this is DevOps Sample!', env: process.env.NODE_ENV || 'development' });
+  res.json({ message: 'Hello from There this is DevOps Sample! ', env: process.env.NODE_ENV || 'development' });
 });
 
 app.use('/health', healthRouter);
