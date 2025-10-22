@@ -10,7 +10,7 @@ app.use(express.json());
 app.use(morgan('combined'));
 
 // Measure request duration for all routes
-app.use((req, res, next) => {
+app.use((req,, res, next) => {
   const end = httpRequestDurationSeconds.startTimer();
   res.on('finish', () => {
     end({ method: req.method, route: req.route ? req.route.path : req.path, code: res.statusCode });
