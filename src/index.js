@@ -7,7 +7,7 @@ const app = express();
 
 // Basic middleware
 app.use(express.json());
-app.use(morgan('combined'));
+app.use(morgan('combined'));             
 
 // Measure request duration for all routes
 app.use((req, res, next) => {
